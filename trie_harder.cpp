@@ -99,13 +99,11 @@ class Trie{
     }
     void levDistanceHelper(int idx,const char *input,string res,Node * curr,int N,int remaining,vector<string>&nearStrings){
         if(idx>N || remaining<0){ 
-            // cout<<idx<<" - "<<remaining<<endl;
             return ;
         }
         if(idx==N && curr->end && !curr->vis){
             curr->vis = true;
             nearStrings.push_back(res);
-           // cout<<res<<endl;
         }
         for(int i=0;i<26;i++){
             if(curr->arr[i]){
@@ -114,9 +112,9 @@ class Trie{
                 if(idx<N && input[idx]==ch){
                         levDistanceHelper(idx+1,input,res+ch,inside,N,remaining,nearStrings);
                 }
-                 //replace
+                //replace
                     levDistanceHelper(idx+1,input,res+ch,inside,N,remaining-1,nearStrings);
-                     //insert 
+                //insert 
                     levDistanceHelper(idx,input,res+ch,inside,N,remaining-1,nearStrings);  
             }
         }
@@ -135,7 +133,6 @@ class Trie{
     vector<string> levDistance(int idx,const string input,string res,Node * curr,int remaining){
         
         vector<string>nearStrings;
-        // cout<<"hi!"<<endl;
         levDistanceHelper( idx,input.c_str(), res, curr,input.size(), remaining,nearStrings);
         exploreAllStrings(this->root);
         return nearStrings;
@@ -182,26 +179,3 @@ int main(){
     
     
 }
-
-
-
-
-//   t.insertWord("consider");
-   
-//     t.insertWord("entitled");
-    
-//     // t.insertWord("litter");
-//     t.insertWord("dames");
-//     t.insertWord("camel");
-//     t.insertWord("filling");
-//     t.insertWord("grasses");
-//     t.insertWord("fitter");
-//     t.insertWord("filters");
-//     t.insertWord("tilers");
-//     t.insertWord("filers");
-//     // cout<<t.searchWord("tilers")<<endl;
-//     // cout<<t.searchWord("dame")<<endl;
-
-//     // t.gesuggestions("con");
-//     t.levDistance(0,"filter","",t.root,3);
-//      t.levDistance(0,"dam","",t.root,3);
