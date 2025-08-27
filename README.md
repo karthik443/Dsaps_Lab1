@@ -45,7 +45,7 @@ approach :
             5. at the end i will get all those possibile strings at distance 3
            
 
-Question 2 - battle of banners. ---------------------------------------------------
+Question 3 - battle of banners. ---------------------------------------------------
 
 problem statement: Your task is to maintain the silhouette efficiently and answer queries about its shape. You will be given the initial positions and heights of all banners, followed by a sequence of updates and silhouette print requests. 
 
@@ -69,4 +69,3 @@ approach :
         5. printed the position and height. 
         (Used binary search for while printing points as I had compressed the points before)
 
-        
